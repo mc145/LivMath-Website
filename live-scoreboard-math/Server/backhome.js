@@ -17,7 +17,6 @@ app.get('/', (req, res) =>{
    });
 }); 
 
-const bla = 123; 
 app.post('/news', (req, res) =>{
  
   // let transporter = nodemailer.createTransport({
