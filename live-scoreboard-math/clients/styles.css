@@ -1,0 +1,260 @@
+
+body{
+    background-color: rgb(33, 46, 46);  
+    z-index: -5; 
+}
+.nav{
+    list-style-type: none; 
+    margin-left: 30vw; 
+    padding: 0; 
+    overflow: hidden;
+    position: absolute; 
+    z-index: 2;  
+
+}
+.burger div{
+    width: 25px; 
+    height: 3px; 
+    background-color: white; 
+    margin: 5px;  
+    z-index: 1000; 
+}
+.burger{
+    position: absolute; 
+    z-index: 1100; 
+    right: 15px;
+    display: none; 
+    cursor: pointer; 
+}
+.nav li{
+    float: left; 
+}
+
+.nav li a{
+    display: block; 
+    color: white; 
+    text-align: center;
+    padding: 34px 10px;
+    text-decoration: none; 
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.2em; 
+}
+.nav li a:hover{
+    color: lightgrey; 
+}
+body, html {
+    height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img1.jpeg");
+z-index: 1; 
+  /* Set a specific height */
+  height: 50%;
+  padding: 0; 
+  margin: 0; 
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.hero-text h1{
+    display:inline; 
+}
+
+#clickbait{
+font-family: 'Alex Brush', cursive;
+font-weight: normal; 
+font-size: 5.5em; 
+}
+#click{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size:0.5em; 
+}
+#explain{
+    font-family: 'Roboto Condensed', sans-serif; 
+    font-size: 1.2em; 
+    font-style: italic; 
+    color: lightgrey; 
+}
+ #register1{
+     z-index: 10; 
+    color: white; 
+    border: 2px solid rgba(150,0,0,0.8);
+    background-color: rgba(10,10,15,0.4); 
+}
+
+#register1:hover{
+    z-index:10;
+    background-color: rgba(10,10,15,0.6);
+} 
+.welcome h3{
+    color: white; 
+    text-align: center; 
+    margin-top: 1%;
+    font-family: 'Biryani', sans-serif;
+}
+.welcome p{
+    color: white;   
+    width: 75%; 
+    margin-top: 1%;
+    font-size: 1.2em;
+    margin-left: 15%;
+    text-indent: 2em;    
+    line-height: 1.6;  
+    font-family: 'Roboto Condensed', sans-serif; 
+ 
+}
+
+#register2{
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 4%;
+    margin-top: 3%;  
+    font-size: 1.5em;
+    z-index: 10; 
+    letter-spacing: 0.4em; 
+    font-family: 'Biryani', sans-serif; 
+    padding: 0; 
+    margin-bottom: 2%;
+
+}
+hr{
+    border: solid 2px brown; 
+}
+.refer1 h4{
+    color: turquoise;
+    font-size: 1.1em; 
+    font-family: 'Roboto Condensed', sans-serif; 
+}
+.refer1{
+    margin-top: 3%;
+    margin-left: 30%;  
+}
+
+.question{
+    width: 8%; 
+    position: absolute; 
+    margin-top: -9%; 
+    margin-left: 14%;
+    z-index: 15; 
+}
+.user{
+    width: 5%;
+    margin-left: 30%;
+     
+}
+.participants #label{
+    color: white; 
+    font-size: 2em;
+    font-family: 'Biryani', sans-serif; 
+    margin-left: 38%; 
+    margin-top: -4%;
+}
+
+
+
+
+
+.rightcol{
+    float: right; 
+    color: white; 
+    padding: 1%; 
+    font-family: 'Biryani', sans-serif; 
+}
+.txtb{
+    width: 70%; 
+}
+.rightcol h1{
+    font-size: 1.5em;
+    width: 80%;  
+
+}
+
+.rightcol{
+    width:30%; 
+    margin: 0 auto; 
+    margin-top: 11%; 
+    border-top: 5px solid pink; 
+  
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width:1068px){
+    body{
+        overflow-x: hidden; 
+    }
+    .nav{
+        position: absolute; 
+        right: 0;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%;
+        height: 100%;  
+        transform: translateX(100%); 
+        transition: transform 1s ease-in; 
+        background-color: rgb(33, 46, 46); 
+    }
+    .nav li{
+        opacity: 100; 
+    }
+    .burger{
+        display: block; 
+        z-index: 2000;
+    }
+    
+ 
+  
+}
+@media screen and (max-height:568px){
+    body{
+        overflow-x: hidden; 
+    }
+    .nav{
+        position: absolute; 
+        right: 0;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%;
+        height: 100%;  
+        transform: translateX(100%); 
+        transition: transform 1s ease-in; 
+        background-color: rgb(33, 46, 46); 
+    }
+    .nav li{
+        opacity: 100; 
+    }
+    .burger{
+        display: block; 
+        z-index: 2000;
+    }
+    #register2{
+        height: 7%; 
+    }
+}
+.nav-active{
+    transform: translateX(0%); 
+}
