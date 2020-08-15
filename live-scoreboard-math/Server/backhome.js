@@ -17,7 +17,7 @@ app.get('/', (req, res) =>{
    });
 }); 
 
-
+const bla = 123; 
 app.post('/news', (req, res) =>{
  
   // let transporter = nodemailer.createTransport({
@@ -27,7 +27,7 @@ app.post('/news', (req, res) =>{
   //       pass: process.env.PASSWORD
   //     }
   // });
-
+   
   // let mailOptions = {
   //     from: 'mathgeek145@gmail.com',
   //     to:  `${req.body.email}`,
