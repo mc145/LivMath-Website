@@ -1,3 +1,4 @@
+require('dotenv').config(); 
 const express = require('express'); 
 const cors = require('cors');
 const monk = require('monk'); 
@@ -18,30 +19,34 @@ app.get('/', (req, res) =>{
 
 
 app.post('/news', (req, res) =>{
-  let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth:{
-        user: 'mathgeek145@gmail.com',
-        pass: 'Table7minton'
-      }
-  });
+ 
+  // let transporter = nodemailer.createTransport({
+  //     service: 'gmail',
+  //     auth:{
+  //       user: process.env.EMAIL,
+  //       pass: process.env.PASSWORD
+  //     }
+  // });
 
-  let mailOptions = {
-      from: 'mathgeek145@gmail.com',
-      to:  `${req.body.email}`,
-      subject: 'Testing and Testing',
-      text: 'It works' 
-  };
+  // let mailOptions = {
+  //     from: 'mathgeek145@gmail.com',
+  //     to:  `${req.body.email}`,
+  //     subject: 'Testing and Testing',
+  //     text: 'It works' 
+  // };
 
-  transporter.sendMail(mailOptions, function(err, data){
-      if(err){
-        console.log("error:( " + err); 
-      }
-      else{
-        console.log('sent :)'); 
-      }
-  });
+  // transporter.sendMail(mailOptions, function(err, data){
+  //     if(err){
+  //       console.log("error:( " + err); 
+  //     }
+  //     else{
+  //       console.log('sent :)'); 
+  //     }
+  // });
+
+
 }); 
+
 
 
 app.listen(8888, () =>{
