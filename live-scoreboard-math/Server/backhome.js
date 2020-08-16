@@ -1,14 +1,17 @@
 require('dotenv').config(); 
 const express = require('express'); 
 const cors = require('cors');
-const monk = require('monk'); 
 const nodemailer = require('nodemailer'); 
+const monk = require('monk'); 
 const app = express(); 
 
 
 app.use(cors()); 
 app.use(express.json()); 
 
+
+const db = monk('localhost/emailer'); 
+const news = db.get('news'); 
 
 
 app.get('/', (req, res) =>{
@@ -17,34 +20,58 @@ app.get('/', (req, res) =>{
    });
 }); 
 
+
+
 app.post('/news', (req, res) =>{
  
-  // let transporter = nodemailer.createTransport({
-  //     service: 'gmail',
-  //     auth:{
-  //       user: process.env.EMAIL,
-  //       pass: process.env.PASSWORD
-  //     }
-  // });
+  let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth:{
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD
+      }
+  });
    
-  // let mailOptions = {
-  //     from: 'mathgeek145@gmail.com',
-  //     to:  `${req.body.email}`,
-  //     subject: 'Testing and Testing',
-  //     text: 'It works' 
-  // };
+  let mailOptions = {
+      from: 'mathgeek145@gmail.com',
+      to:  `${req.body.email.toString()}`,
+      subject: 'Testing and Testing',
+      text: 'It works' 
+  };
 
-  // transporter.sendMail(mailOptions, function(err, data){
-  //     if(err){
-  //       console.log("error:( " + err); 
-  //     }
-  //     else{
-  //       console.log('sent :)'); 
-  //     }
-  // });
+  
+    
+  transporter.sendMail(mailOptions, function(err, data){
+      if(err){
+        console.log("error:( " + err); 
+        let emailWorks = {
+          works: false
+        };
+        res.json(emailWorks); 
+      }
+      else{
+        console.log('sent :)'); 
+        let emailWorks = {
+          works: true
+        };
+        res.json(emailWorks);
+
+
+        
+       let emails = {
+         email: `${req.body.email.toString()}`
+       };
+        news
+          .insert(emails)
+          .then(createdEmails =>{
+              console.log(createdEmails); 
+          });
+      }
+  });
 
 
 }); 
+
 
 
 

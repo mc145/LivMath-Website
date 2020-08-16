@@ -2,6 +2,7 @@
 const navSlide = () =>{
 const burger = document.querySelector('.burger'); 
 const nav = document.querySelector('.nav');
+
     burger.addEventListener('click',()=>{
         nav.classList.toggle('nav-active'); 
     }); 
@@ -25,5 +26,14 @@ newsletter.addEventListener('submit', (event) =>{
             headers: {
                 'content-type': 'application/json'
             }
-        });
+        }).then(response => response.json())
+            .then(emailWorks => {
+                if(emailWorks.works){
+                    document.getElementById("explains").innerHTML = "Received"; 
+                }
+                else{
+                    document.getElementById("explains").innerHTML = "NOT VALID"; 
+
+                }
+            });
 }); 
