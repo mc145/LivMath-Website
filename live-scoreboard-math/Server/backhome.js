@@ -57,15 +57,17 @@ app.post('/news', (req, res) =>{
         res.json(emailWorks);
 
 
-        
+
        let emails = {
-         email: `${req.body.email.toString()}`
+         email: `${req.body.email.toString()}`,
+         created: new Date()
        };
         news
           .insert(emails)
           .then(createdEmails =>{
               console.log(createdEmails); 
           });
+        
       }
   });
 
