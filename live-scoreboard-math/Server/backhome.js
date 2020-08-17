@@ -35,8 +35,8 @@ app.post('/news', (req, res) =>{
   let mailOptions = {
       from: 'mathgeek145@gmail.com',
       to:  `${req.body.email.toString()}`,
-      subject: 'Testing and Testing',
-      text: 'It works' 
+      subject: 'Savi sees this',
+      text: 'Hello Savi, your email has been accessed' 
   };
 
   
