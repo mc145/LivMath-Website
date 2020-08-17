@@ -35,8 +35,8 @@ app.post('/news', (req, res) =>{
   let mailOptions = {
       from: 'mathgeek145@gmail.com',
       to:  `${req.body.email.toString()}`,
-      subject: 'Savi sees this',
-      text: 'Hello Savi, your email has been accessed' 
+      subject: 'Working',
+      text: 'test, test, email working' 
   };
 
   
@@ -67,15 +67,13 @@ app.post('/news', (req, res) =>{
           .then(createdEmails =>{
               console.log(createdEmails); 
           });
-        
-      }
-  });
+       news.remove({}); 
 
+} 
+
+  }); 
 
 }); 
-
-
-
 
 app.listen(8888, () =>{
     console.log('Listening on http://localhost:8888'); 
