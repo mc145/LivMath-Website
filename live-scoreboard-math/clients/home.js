@@ -36,4 +36,7 @@ newsletter.addEventListener('submit', (event) =>{
 
                 }
             });
+            // .then(numberofUser =>{
+            //     document.getElementById("label").innerHTML = `Registered Participants: ${numberofUser}`; 
+            // });
 }); 

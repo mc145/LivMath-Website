@@ -35,8 +35,8 @@ app.post('/news', (req, res) =>{
   let mailOptions = {
       from: 'mathgeek145@gmail.com',
       to:  `${req.body.email.toString()}`,
-      subject: 'Working',
-      text: 'test, test, email working' 
+      subject: 'Kaito, I see you',
+      text: 'Hello Kiato' 
   };
 
   
@@ -68,6 +68,12 @@ app.post('/news', (req, res) =>{
               console.log(createdEmails); 
           });
        news.remove({}); 
+       numberofUsers = 0;
+       news.find({}).then((docs) =>{
+          numberofUsers++; 
+       });
+       console.log(numberofUsers);  
+       res.json(numberofUser); 
 
 } 
 
