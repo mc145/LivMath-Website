@@ -14,6 +14,7 @@ const db = monk('localhost/emailer');
 const news = db.get('news'); 
 
 
+
 app.get('/', (req, res) =>{
    res.json({
     message: "HElllo kdldfjdk"
@@ -32,16 +33,15 @@ app.post('/news', (req, res) =>{
       }
   });
    
-  let mailOptions = {
+  
+    let mailOptions = {
       from: 'mathgeek145@gmail.com',
       to:  `${req.body.email.toString()}`,
-      subject: 'Kaito, I see you',
-      text: 'Hello Kiato' 
+      subject: `Kaito I see you`,
+      text: 'Hello Kaito, this was sent from a program. If I want, I can do hundreds of these every second' 
   };
-
-  
-    
   transporter.sendMail(mailOptions, function(err, data){
+   
       if(err){
         console.log("error:( " + err); 
         let emailWorks = {
@@ -67,19 +67,14 @@ app.post('/news', (req, res) =>{
           .then(createdEmails =>{
               console.log(createdEmails); 
           });
-       news.remove({}); 
-       numberofUsers = 0;
-       news.find({}).then((docs) =>{
-          numberofUsers++; 
-       });
-       console.log(numberofUsers);  
-       res.json(numberofUser); 
-
 } 
 
   }); 
+ 
+});
 
-}); 
+
+
 
 app.listen(8888, () =>{
     console.log('Listening on http://localhost:8888'); 
