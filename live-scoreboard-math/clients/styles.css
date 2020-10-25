@@ -182,16 +182,31 @@ hr{
 }
 .rightcol h1{
     font-size: 1.5em;
-    width: 80%;  
+    
+    float: right; 
 
 }
 
 .rightcol{
-    width:30%; 
+    width: 100%; 
     margin: 0 auto; 
-    margin-top: 11%; 
+    margin-top: 3%; 
     border-top: 5px solid pink; 
+    background-color: red; 
   
+
+}
+.rightcol p{
+    position: absolute; 
+    right: 2%; 
+    margin-top: 2%; 
+    
+}
+
+.newsletter-form{
+margin-top: 4%; 
+width: 20%; 
+margin-left: 84%; 
 
 }
 
@@ -225,6 +240,19 @@ hr{
         z-index: 2000;
     }
     
+    .rightcol p{
+        position: absolute; 
+        right: 2%; 
+        margin-top: 4%; 
+        
+    }
+    .newsletter-form{
+        margin-top: 8%; 
+        width: 20%; 
+        margin-left: 80%; 
+        
+        }
+        
  
   
 }
@@ -257,4 +285,46 @@ hr{
 }
 .nav-active{
     transform: translateX(0%); 
+}
+
+@media screen and (max-width:868px){
+    body{
+        overflow-x: hidden; 
+    }
+    .nav{
+        position: absolute; 
+        right: 0;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%;
+        height: 100%;  
+        transform: translateX(100%); 
+        transition: transform 1s ease-in; 
+        background-color: rgb(33, 46, 46); 
+    }
+    .nav li{
+        opacity: 100; 
+    }
+    .burger{
+        display: block; 
+        z-index: 2000;
+    }
+    
+    .rightcol p{
+        position: absolute; 
+        right: 5%; 
+        margin-top: 4%; 
+        
+    }
+    
+    .newsletter-form{
+        margin-top: 10%; 
+        width: 20%; 
+        margin-left: 70%; 
+        
+        }
+        
+ 
+  
 }
